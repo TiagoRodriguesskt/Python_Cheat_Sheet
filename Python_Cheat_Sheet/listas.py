@@ -7,11 +7,26 @@ You access items using an index, or within a loop.
 bikes = ["trek", "redline", "giant"]
 
 """Get the first item in a list"""
+first_bike = bikes[0]
+print(first_bike)
 
 """Get the last item in a list"""
+last_bike = bikes[-1]
+print(last_bike)
 
 """Looping througn a list"""
+for bike in bikes:
+    print(bike)
 
 """Adding items to a list"""
+bikes = []
+bikes.append("trek")
+bikes.append("redline")
+bikes.append("giant")
+print(bikes)
 
 """Making numerical list"""
+squares = []
+for x in range(1, 11):
+    squares.append(x**2)
+print(squares)
