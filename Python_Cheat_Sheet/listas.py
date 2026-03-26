@@ -25,7 +25,9 @@ bikes.append("redline")
 bikes.append("giant")
 print(bikes)
 
-"""Making numerical list"""
+"""Making numerical list
+Generate a list of numbers raised to the power of squares.
+"""
 squares = []
 for x in range(1, 11):
     squares.append(x**2)
