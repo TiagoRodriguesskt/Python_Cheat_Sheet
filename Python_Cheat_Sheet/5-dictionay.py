@@ -5,7 +5,6 @@ Each item in a dictonary is a key-value pair.
 """
 
 """A simples dictionay"""
-from queue import Empty
 
 alien = {"color": "green", "points": 5}
 
