@@ -6,7 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.7/brython_stdlib.min.js"></script>
     <style>
         body {
-            transition: background 2s ease; /* Suaviza a troca de cores */
+            transition: background 2 ease; /* Suaviza a troca de cores */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -78,7 +78,7 @@
         # Inicia a primeira cor
         change_color()
         # Define o intervalo: 10000 milissegundos = 10 segundos
-        timer.set_interval(change_color, 10000)
+        timer.set_interval(change_color, 5)
 
         # --- CONSOLE LOG ---
         current_time = int(time.strftime('%H'))
