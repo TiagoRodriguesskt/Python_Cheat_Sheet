@@ -8,9 +8,6 @@ by a function is called a peramenter.
 """A simples functions"""
 
 
-import re
-
-
 def my_user():
     """Display a simples freeting."""
     print("Hello!")
@@ -54,12 +51,12 @@ print(sum)
 """Return"""
 
 
-def add(x, y):
+def addd(x, y):
     print(f"x is {x}, y is {y}")
     return x + y
 
 
-print(add(5, 6))
+print(addd(5, 6))
 
 
 """Positional arguments"""
