@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.7/brython.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.7/brython_stdlib.min.js"></script>
+    <style>
+        body {
+            transition: background 2s ease; /* Suaviza a troca de cores */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body onload="brython()">
+
+    <h1 id="header">Aguardando...</h1>
+    <h2 id="counter" style="font-size: 48px;">0</h2>
+    
+    <div>
+        <button id="counter-button">Incrementar</button>
+        <button id="reset-button">Reiniciar</button>
+    </div>
+
+    <script type="text/python">
+        from browser import document, timer, window
+        import time
+
+        # --- CONFIGURAÇÃO INICIAL ---
+        title = 'Python Interativo'
+        document['header'].html = f"Hello, {title}!"
+        counter = 0
+
+        # --- FUNÇÕES DO CONTADOR ---
+        def increment(ev):
+            global counter
+            counter += 1
+            document['counter'].html = str(counter)
+
+        def reset_counter(ev):
+            global counter
+            counter = 0
+            document['counter'].html = str(counter)
+
+        # Ligar os botões às funções
+        document["counter-button"].bind("click", increment)
+        document["reset-button"].bind("click", reset_counter)
+
+        # --- LÓGICA DO DEGRADÊ (CORES) ---
+        # Lista de pares de cores para o degradê
+        colors = [
+            ("linear-gradient(45deg, #ff9a9e, #fad0c4)"),
+            ("linear-gradient(45deg, #a1c4fd, #c2e9fb)"),
+            ("linear-gradient(45deg, #84fab0, #8fd3f4)"),
+            ("linear-gradient(45deg, #cfd9df, #e2ebf0)")
+        ]
+        color_index = 0
+
+        def change_color():
+            global color_index
+            # Aplica o estilo ao fundo do corpo da página
+            document.body.style.background = colors[color_index]
+            # Avança para a próxima cor ou volta ao início
+            color_index = (color_index + 1) % len(colors)
+
+        # Inicia a primeira cor
+        change_color()
+        # Define o intervalo: 10000 milissegundos = 10 segundos
+        timer.set_interval(change_color, 10000)
+
+        # --- CONSOLE LOG ---
+        current_time = int(time.strftime('%H'))
+        if current_time < 12:
+            print('Good morning')
+        elif 12 <= current_time < 18:
+            print('Good afternoon')
+        else:
+            print('Good evening')
+    </script>
+</body>
+</html>
