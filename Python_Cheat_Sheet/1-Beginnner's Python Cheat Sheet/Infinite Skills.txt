@@ -1,0 +1,8 @@
+If you had inifinite programming skills, what would you build?
+
+    As you're learning to program, it's helpful to think about the real-world projects you'd
+like to create. It's a good habit to keep an "ideas" notebook that you can refer to 
+whenever you want to start a new project.
+    If you haven't done so alredy, take a few minutes ans describe three projects  you'd
+like to create. As you're learning you can write small programs that relate to these
+ideas, so you can get practce writing code relavant to topics you're interested in.
